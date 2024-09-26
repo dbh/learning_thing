@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_thing/dictionary_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -6,6 +7,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   @override
+
+  /// The root widget of the app, which is a [MaterialApp].
+  ///
+  /// The app has a blue theme and a single [MyHomePage] as its home page.
+  ///
+  /// The [MyHomePage] is given a unique key to ensure that it is rebuilt when
+  /// the app is run again in the same process.
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My App',
@@ -45,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List'),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Dictionary'),
           BottomNavigationBarItem(
               icon: Icon(Icons.settings), label: 'Settings'),
         ],
@@ -61,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
         );
       case 1:
         return Center(
-          child: Text('List Content'),
+          child: DictionaryList(),
         );
       case 2:
         return Center(
